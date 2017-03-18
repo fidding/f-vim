@@ -1,4 +1,13 @@
-" 关闭vi兼容模式
+""==========================================
+" Author: fidding 
+" Version: 1.0 
+" Email: 395455856@qq.com 
+" BlogPost: http://www.fidding.me
+" ReadMe: README.md
+" Last_modify: 2017-03-18
+""==========================================
+
+"关闭vi兼容模式
 set nocompatible
 " 设置运行路径
 set runtimepath^=~/.vim/plugged
