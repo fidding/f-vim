@@ -1,110 +1,106 @@
 ""==========================================
 " Author: fidding 
-" Version: 1.0 
+" Version: 1.1 
 " Email: 395455856@qq.com 
 " BlogPost: http://www.fidding.me
 " ReadMe: README.md
-" Last_modify: 2017-03-18
+" Last_modify: 2017-04-02
 ""==========================================
 
-"关闭vi兼容模式
+" Turn off the vi compatibility mode
 set nocompatible
-" 设置运行路径
+" set runtime path 
 set runtimepath^=~/.vim/plugged
 "==========================================
-" Plugin Settings 插件加载 
+" Plugin Settings 
 "==========================================
 call plug#begin('~/.vim/bundle')
-" 文件模糊搜索
+" File fuzzy query
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
-" 自动补全html/xml标签
+" Automatic completion of the html/xml label
 Plug 'docunext/closetag.vim', { 'for': ['html', 'xml'] }
-" 状态栏
+" status bar 
 Plug 'powerline/powerline'
 " molokai-theme
 Plug 'tomasr/molokai'
 " dracula-theme
 Plug 'dracula/vim'
-" 目录树
+" Directory tree
 Plug 'scrooloose/nerdtree'
-" 自动补全
+" Automatic completion 
 Plug 'Shougo/neocomplete.vim'
-" 快速注释
+" quickly comment 
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 "==========================================
-" General Settings 基础设置
+" General Settings
 "==========================================
-" 设置backspace工作方式，解决在insert模式下退格删除无效
+" set backspace work style
 set backspace=indent,eol,start
-" 设置leader key
+" set leader key
 let mapleader = "\<Space>"
-" 语法高亮
+" Grammar highlighting
 syntax on
-" 显示行号
-set nu
-" 检测文件类型
+" Detect file types
 filetype on
-" 对不同文件类型采用不同缩进
+" Change the indentation mode according to the file type
 filetype indent on
-" 允许插件
+" Allow plugins
 filetype plugin on
-" 启动自动补全
 filetype plugin indent on
-" 突出显示当前列
+" Highlight the current column 
 set cursorcolumn
-" 突出显示当前行
+" Highlight the current line
 set cursorline
-" 鼠标暂不启用
+" Disable the mouse
 set mouse-=a
-" 启用鼠标
+" Enable the mouse
 "set mouse=a
-" 移除toolbar
+" reomove toolbar
 set guioptions-=T
-" 移除menubar
+" remove menubar
 set guioptions-=m
-" 不需要备份
+" Cancel the backup
 set nobackup
-" 启动显示状态行
+" display status bar
 set laststatus=2
-" 设置字体
+" set font style 
 set guifont=Consolas:h12
 autocmd InsertEnter * se cul
 
 "==========================================
-" Display Settings 展示/排版等界面格式设置
+" Display Settings
 "==========================================
-" 在状态栏显示当前行号列号
+" The status bar shows the line number column number
 set ruler
-" 在状态栏显示正在输入的指令
+" The status bar displays the input command
 set showcmd
-" 左下角显示当前vim模式
+" shows vim mode
 set showmode
-" 高亮匹配查找
+" Highlight match search
 set hlsearch
-" 打开增量搜索模式，随着键入即时搜索
 set incsearch
-" 搜索时忽略大小写
+" Ignore case when searching
 set ignorecase
-" 有一个或以上大写字母时仍大小写敏感
+" One or more capital letters are capitalized sensitive
 set smartcase
-" 括号配对情况，跳转并高亮匹配括号
+" Show brackets match
 set showmatch
-" 代码折叠
+" code folding 
 set foldenable
-" 折叠方法
-" manual    手工折叠
-" indent    使用缩进表示折叠
-" expr      使用表达式定义折叠
-" syntax    使用语法定义折叠
-" diff      对没有更改的文本进行折叠
-" marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
+" floding style 
+" manual 
+" indent
+" expr 
+" syntax
+" diff
+" marker
 set foldmethod=indent
 set foldlevel=99
-" 代码折叠自定义快捷键 <leader>zz
+"  Customize shortcuts <leader>zz
 let g:FoldMethod = 0
 map <leader>zz :call ToggleFold()<cr>
 fun! ToggleFold()
@@ -116,98 +112,94 @@ fun! ToggleFold()
         let g:FoldMethod = 0
     endif
 endfun
-" 缩进配置
-"Smart indent
+" indent config 
+" Smart indent
 set smartindent
-" 打开自动缩进
+" Turn on auto indent
 set autoindent
 set cindent
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
-" tab缩进，用空格代替tab
+" Use spaces instead of tab indentation
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-" 显示行号
+" Show line number
 set number
 
 "==========================================
-" FileEncode Settings 文件编码,格式
+" FileEncode Settings
 "==========================================
-" 设置新文件的编码为 UTF-8
+" Set the encoding to utf-8
 set encoding=utf-8
-" 自动判断编码时，依次尝试以下编码：
+" Automatically determine the coding sequence
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
 "set langmenu=zh_CN.UTF-8
 "set enc=2byte-gb18030
-" 下面这句只影响普通模式 (非图形界面) 下的 Vim
 set termencoding=utf-8
 
 "Use Unix as the standard file type
 set ffs=unix,dos,mac
-
-" 如遇Unicode值大于255的文本，不必等到空格再折行
 set formatoptions+=m
-" 合并两行中文时，不在中间加空格
 set formatoptions+=B
 
 "==========================================
-" HotKey Settings  自定义快捷键设置
+" HotKey Settings
 "==========================================
-" 关闭方向键, 强迫自己用 hjkl
+" Close the arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
-" 分屏窗口移动, Smart way to move between windows
+" Smart way to move between windows
 nnoremap <Leader>wj <C-W>j
 nnoremap <Leader>wk <C-W>k
 nnoremap <Leader>wh <C-W>h
 nnoremap <Leader>wl <C-W>l
-"关闭窗口
+" close window
 nnoremap <Leader>wc :close<CR>
-" 文件保存
+" save file 
 nnoremap <Leader>fs :w<CR>
-" 替代esc解决方案
+" instead of esc 
 inoremap jj <esc>
-" vim中允许使用win的复制粘贴快捷键
+" Vim allows the use of the window copy and paste shortcut keys
 map <C-c> "+y
 map <C-v> "+p
-" F1 废弃这个键,防止调出系统帮助
+" Disable F1 to bring up system help
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
 noremap <F1> <Esc>"
 
 "==========================================
-" commenter Settings 快速注释设置 
+" commenter Settings 
 "==========================================
-" 快捷键简单说明
-" <Leader>cc 注释当前行或选中行
-" <Leader>cu 取消注释当前行或选中行 
+" Instructions for use
+" <Leader>cc Comment the current row or select the line
+" <Leader>cu  Uncomment the current row or select the line
 let g:NERDSpaceDelims=1
 let g:NERDAltDelims_python = 1
 
 "==========================================
-" Closetag Settings html标签补全设置
+" Closetag Settings Html tag completion
 "==========================================
 let g:closetag_html_style=1
 
 "==========================================
-" Powerline Settings 状态栏设置
+" Powerline Settings
 "==========================================
 set runtimepath^=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols='fancy'
 
 "==========================================
-" Theme Settings 主题设置
+" Theme Settings
 "==========================================
-set t_Co=256
-set background=dark
 color dracula
+"set t_Co=256
+"set background=dark
 "color molokai
 
 "==========================================
-" Ctrlp Settings Ctrlp设置 
+" Ctrlp Settings
 "==========================================
 let g:ctrlp_map='<Leader>p'
 let g:ctrlp_cmd='CtrlP'
@@ -221,7 +213,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 "==========================================
-" NerdTree Settings NerdTree设置
+" NerdTree Settings
 "==========================================
 let NERDChristmasTree=0
 let NERDTreeWinSize=25
@@ -242,7 +234,7 @@ autocmd bufenter *  if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.is
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 "==========================================
-" Neocomplete Settings 自动补全设置
+" Neocomplete Settings
 "==========================================
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -316,9 +308,9 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "==========================================
-" Other Settings 其他设置
+" Other Settings
 "==========================================
-" vimrc文件修改之后自动加载, windows
+" The vimrc file is automatically loaded after modification, windows
 "autocmd! bufwritepost _vimrc source %
-" vimrc文件修改之后自动加载, linux
+" The vimrc file is automatically loaded after modification, linux
 "autocmd! bufwritepost .vimrc source %
