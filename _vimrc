@@ -68,7 +68,11 @@ set nobackup
 " display status bar
 set laststatus=2
 " set font style 
-set guifont=Consolas:h12
+if has('gui_win32')
+    set guifont=Consolas:h13
+else
+    set guifont=Source_Code_Pro:h13
+endif
 autocmd InsertEnter * se cul
 
 "==========================================
