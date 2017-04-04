@@ -69,9 +69,9 @@ set nobackup
 set laststatus=2
 " set font style 
 if has('gui_win32')
-    set guifont=Consolas:h13
+    set guifont=Consolas:h12
 else
-    set guifont=Source_Code_Pro:h13
+    set guifont=Source_Code_Pro:h12
 endif
 autocmd InsertEnter * se cul
 
