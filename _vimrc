@@ -14,7 +14,7 @@ set runtimepath^=~/.vim/plugged
 "==========================================
 " Plugin Settings 
 "==========================================
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 " File fuzzy query
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
@@ -191,7 +191,7 @@ let g:closetag_html_style=1
 "==========================================
 " Powerline Settings
 "==========================================
-set runtimepath^=~/.vim/bundle/powerline/powerline/bindings/vim
+set runtimepath^=~/.vim/plugged/powerline/powerline/bindings/vim
 let g:Powerline_symbols='fancy'
 
 "==========================================
