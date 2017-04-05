@@ -42,8 +42,6 @@ call plug#end()
 set backspace=indent,eol,start
 " set leader key
 let mapleader = "\<Space>"
-" no backup
-set nobackup
 " Grammar highlighting
 syntax on
 " Detect file types
@@ -140,7 +138,7 @@ set number
 "==========================================
 " Set the encoding to utf-8
 set encoding=utf-8
-" Automatically determine the coding sequence
+" utomatically determine the coding sequence
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
 "set langmenu=zh_CN.UTF-8
