@@ -18,7 +18,7 @@ ln -s f-vim/_vimrc ~/_vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
- ### Config
+ ## Config
  ---
  ### install vim plug
  1.open vim
