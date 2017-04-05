@@ -51,6 +51,8 @@ filetype indent on
 " Allow plugins
 filetype plugin on
 filetype plugin indent on
+" save file
+set fileformats=dos,unix,mac
 " Highlight the current column 
 set cursorcolumn
 " Highlight the current line
