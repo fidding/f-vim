@@ -170,6 +170,12 @@ nnoremap <Leader>wc :close<CR>
 nnoremap <Leader>fs :w<CR>
 " instead of esc 
 inoremap jj <esc>
+" closetag ({[
+imap () ()<Left>
+imap {} {}<Left>
+imap [] []<Left>
+imap "" ""<Left>
+imap '' ''<Left>
 " Vim allows the use of the window copy and paste shortcut keys
 map <C-c> "+y
 map <C-v> "+p
