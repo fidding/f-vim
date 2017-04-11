@@ -150,7 +150,7 @@ set ffs=unix,dos,mac
 set formatoptions+=m
 set formatoptions+=B
 " Sync clipboard
-set clipboard+=unnamed
+" set clipboard+=unnamed
 "==========================================
 " HotKey Settings
 "==========================================
