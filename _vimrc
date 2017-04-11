@@ -1,6 +1,6 @@
 ""==========================================
 " Author: fidding 
-" Version: 1.1 
+" Version: 1.2 
 " Email: 395455856@qq.com 
 " BlogPost: http://www.fidding.me
 " ReadMe: README.md
