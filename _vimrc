@@ -149,7 +149,8 @@ set termencoding=utf-8
 set ffs=unix,dos,mac
 set formatoptions+=m
 set formatoptions+=B
-
+" Sync clipboard
+set clipboard+=unnamed
 "==========================================
 " HotKey Settings
 "==========================================
@@ -207,7 +208,7 @@ color dracula
 "==========================================
 " Ctrlp Settings
 "==========================================
-let g:ctrlp_map='<Leader>p'
+let g:ctrlp_map='<Leader>fl'
 let g:ctrlp_cmd='CtrlP'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
