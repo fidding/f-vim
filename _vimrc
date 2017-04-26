@@ -22,7 +22,7 @@ Plug 'majutsushi/tagbar'
 " Automatic completion of the html/xml label
 Plug 'docunext/closetag.vim', { 'for': ['html', 'xml'] }
 " status bar 
-Plug 'powerline/powerline'
+"Plug 'powerline/powerline'
 " molokai-theme
 Plug 'tomasr/molokai'
 " dracula-theme
@@ -33,6 +33,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neocomplete.vim'
 " quickly comment 
 Plug 'scrooloose/nerdcommenter'
+" airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "==========================================
@@ -201,10 +204,27 @@ let g:closetag_html_style=1
 "==========================================
 " Powerline Settings
 "==========================================
-set runtimepath^=~/.vim/plugged/powerline/powerline/bindings/vim
-let g:Powerline_symbols='fancy'
+"set runtimepath^=~/.vim/plugged/powerline/powerline/bindings/vim
+"let g:Powerline_symbols='fancy'
 
 "==========================================
+" Airline Settings
+"==========================================
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+endif
+"let g:airline_left_sep = '▶'
+"let g:airline_left_alt_sep = '❯'
+"let g:airline_right_sep = '◀'
+"let g:airline_right_alt_sep = '❮'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+let g:airline#extensions#whitespace#enabled=0
+" tabline
+"let g:airline#extensions#tabline#enabled = 1
+"nnoremap <Leader>bn :bn<CR>
+"nnoremap <leader>bp :bp<CR>    
 " Theme Settings
 "==========================================
 color dracula
